@@ -1,0 +1,47 @@
+<!-- templates/registration/login.html -->
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+
+{% block content %}
+
+<br><br>
+
+
+
+<div class="container container-fluid justify-content-center">
+        <!-- <div class="content-section" >  -->
+        <div class="container container-fluid" id="reg_form">
+            <form id="form" method="POST">
+                <div class="container-fluid justify-content-center" id="login">
+                    <h1 >
+                        <img src="/static/images/logo3.png" width="140" height="70" alt="WuHaYu">LOGIN
+                    </h1>                    
+                </div>
+                <br>
+                <div>
+                    {% csrf_token %}
+                    {{form | crispy}}
+                    <!-- {{ form.as_p }} -->
+                </div>
+                <div>
+                    <input type="submit" name="Submit" id="login_btn" class="btn btn-info btn-dark btn-lg" type="button">
+                </div>                    
+                
+            
+                <div id="content" class="container container-fluid">
+                    <br>
+                    <small class="form-text text-center">
+                        Create an account              
+                        <a href="{% url 'register' %}" style="color: black">here</a>     
+                    </small> 
+                </div> 
+            </form>
+        </div>
+        
+    
+</div>
+
+
+{% endblock %}
