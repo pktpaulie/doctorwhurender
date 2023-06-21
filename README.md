@@ -1,0 +1,2 @@
+# doctorwhurender
+Pharmacy stock application 
